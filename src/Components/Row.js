@@ -4,10 +4,39 @@ import "../Stylesheets/Row.css";
 
 const baseUrl = "https://image.tmdb.org/t/p/original/";
 
-const Row = ({ title, fetchUrl }) => {
+const Row = ({ title, fetchUrl, isLargeRow = false }) => {
   const [movies, setMovies] = useState([]);
 
-  return <div className='row'></div>;
+  useEffect(() => {
+    const fetchData = async () => {
+      const request = await axios.get(fetchUrl);
+      setMovies(request.data.results);
+
+      return request;
+    };
+
+    fetchData();
+  }, [fetchUrl]);
+
+  return (
+    <div className='row'>
+      <h2>{title}</h2>
+      {/* container -> posters - films */}
+      <div className='row_posters'>
+        {" "}
+        {movies.map((movie) => (
+          <img
+            key={movie.id}
+            //onClick={() => handleClick(movie)}
+            className='row__poster'
+            src={` ${baseUrl}${movie.poster_path}`}
+            alt={movie.name}
+          />
+        ))}{" "}
+      </div>
+      {/* posters -multiple*/}
+    </div>
+  );
 };
 
 export default Row;

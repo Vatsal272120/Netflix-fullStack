@@ -24,15 +24,21 @@ const Row = ({ title, fetchUrl, isLargeRow = false }) => {
       {/* container -> posters - films */}
       <div className='row_posters'>
         {" "}
-        {movies.map((movie) => (
-          <img
-            key={movie.id}
-            //onClick={() => handleClick(movie)}
-            className='row__poster'
-            src={` ${baseUrl}${movie.poster_path}`}
-            alt={movie.name}
-          />
-        ))}{" "}
+        {movies.map(
+          (movie) =>
+            ((isLargeRow && movie.poster_path) ||
+              (!isLargeRow && movie.backdrop_path)) && (
+              <img
+                key={movie.id}
+                //onClick={() => handleClick(movie)}
+                className={`row__poster ${isLargeRow && "row__posterLarge"}`}
+                src={` ${baseUrl}${
+                  isLargeRow ? movie.backdrop_path : movie.poster_path
+                }`}
+                alt={movie.name}
+              />
+            )
+        )}{" "}
       </div>
       {/* posters -multiple*/}
     </div>

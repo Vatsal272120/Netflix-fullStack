@@ -1,8 +1,8 @@
 import React from "react";
-import "../Stylesheets/HomeScreen.css";
-import Banner from "./Banner";
-import Navbar from "./Navbar";
-import Row from "./Row";
+import "./HomeScreen.css";
+import Banner from "../Components/Banner";
+import Navbar from "../Components/Navbar";
+import Row from "../Components/Row";
 
 import requests from "./../Utils/Requests";
 

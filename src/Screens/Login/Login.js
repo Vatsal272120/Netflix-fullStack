@@ -15,6 +15,22 @@ const Login = () => {
 
         <div className='login__gradient'></div>
       </div>
+      <div className='login__body'>
+        <>
+          {" "}
+          <h1 className='login__bodyTitle'>
+            Unlimited Films, TV Programmes and more...
+          </h1>{" "}
+          <h2>Watch anywhere. Cancel at any time</h2>
+          <h3> Ready to watch? Enter your email to get started</h3>
+          <div className='login__input'>
+            <form action=''>
+              <input type='email' placeholder='email address' />
+              <button className='login__getStarted'>GET STARTED</button>
+            </form>
+          </div>
+        </>
+      </div>
     </div>
   );
 };

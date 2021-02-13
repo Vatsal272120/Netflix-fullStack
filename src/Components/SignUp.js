@@ -9,14 +9,26 @@ const SignUp = () => {
   const register = (e) => {
     e.preventDefault();
 
-    auth.createUserWithEmailAndPassword(
-      emailRef.current.value,
-      passRef.current.value
-    );
+    auth
+      .createUserWithEmailAndPassword(
+        emailRef.current.value,
+        passRef.current.value
+      )
+      .then((user) => {
+        console.log(user);
+      })
+      .catch((e) => alert(e.message));
   };
 
   const signIn = (e) => {
     e.preventDefault();
+
+    auth
+      .signInWithEmailAndPassword(emailRef.current.value, passRef.current.value)
+      .then((user) => {
+        console.log(user);
+      })
+      .catch((e) => alert(e.message));
   };
 
   return (

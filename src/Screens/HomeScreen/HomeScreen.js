@@ -1,10 +1,10 @@
 import React from "react";
 import "./HomeScreen.css";
-import Banner from "../Components/Banner";
-import Navbar from "../Components/Navbar";
-import Row from "../Components/Row";
+import Banner from "../../Components/Banner";
+import Navbar from "../../Components/Navbar";
+import Row from "../../Components/Row";
 
-import requests from "./../Utils/Requests";
+import requests from "../../Utils/Requests";
 
 const HomeScreen = () => {
   return (

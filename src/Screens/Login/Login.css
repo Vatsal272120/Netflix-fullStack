@@ -48,6 +48,8 @@
   color: white;
   padding: 20px;
   margin-left: auto;
+  left: 0;
+  right: 0;
   margin-right: auto;
   text-align: center;
 }

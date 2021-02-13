@@ -8,7 +8,10 @@ const SignUp = () => {
         <input type='email' placeholder='Email' />
         <input type='password' placeholder='Password' />
         <button type='submit'>Sign In</button>
-        <h4></h4>
+        <h4>
+          {" "}
+          <span className='signUp__grey'>New to Netflix? </span> Sign Up now.
+        </h4>
       </form>
     </div>
   );

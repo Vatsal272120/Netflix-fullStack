@@ -51,3 +51,15 @@
   border: none;
   cursor: pointer;
 }
+
+.profileScreen__plans {
+  margin-top: 20px;
+}
+
+.profileScreen__plans__type {
+  border-bottom: 1px solid #282c2d;
+  padding-bottom: 10px;
+}
+
+.profileScreen__plans__renewal {
+}

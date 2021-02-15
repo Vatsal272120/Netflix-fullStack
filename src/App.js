@@ -6,6 +6,7 @@ import Login from "./Screens/Login/Login/Login";
 import { auth } from "./firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout, selectuser } from "./features/userSlice";
+import ProfileScreen from "./Screens/ProfileScreen/ProfileScreen";
 
 function App() {
   const user = useSelector(selectuser); // gets the user back
@@ -41,7 +42,7 @@ function App() {
         ) : (
           <Switch>
             <Route path='/profile'>
-              <HomeScreen />
+              <ProfileScreen />
             </Route>
             <Route exact path='/'>
               <HomeScreen />

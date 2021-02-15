@@ -13,9 +13,11 @@
 }
 
 .profileScreen__info {
+  display: flex;
 }
 
 .profileScreen__info__image {
+  height: 100px;
 }
 
 .profileScreen__signOut {

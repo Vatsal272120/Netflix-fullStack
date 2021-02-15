@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 import HomeScreen from "./Screens/HomeScreen/HomeScreen";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Login from "./Screens/Login/Login";
+import Login from "./Screens/Login/Login/Login";
 import { auth } from "./firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout, selectuser } from "./features/userSlice";
@@ -41,6 +41,9 @@ function App() {
         ) : (
           <Switch>
             <Route exact path='/'>
+              <HomeScreen />
+            </Route>
+            <Route path='/profile'>
               <HomeScreen />
             </Route>
           </Switch>

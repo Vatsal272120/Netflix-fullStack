@@ -27,12 +27,12 @@ function App() {
         );
       } else {
         // logged out
-        dispatch(logout);
+        dispatch(logout());
       }
     });
 
     return unsub;
-  }, [dispatch]);
+  }, []);
 
   // useEffect is dependent on the dispatch method - suppose to check the code and fire off
 

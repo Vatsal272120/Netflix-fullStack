@@ -4,25 +4,25 @@ import HomeScreen from "./Screens/HomeScreen/HomeScreen";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./Screens/Login/Login";
 import { auth } from "./firebase";
-import { useDispatch } from "react-redux";
-import { login, logout } from "./features/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { login, logout, selectuser } from "./features/userSlice";
 
 function App() {
-  const user = null;
+  const user = useSelector(selectuser); // gets the user back
   const dispatch = useDispatch();
 
   // for persistence = to see if user is logged in and wont change the app if user is logged in
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
+    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+      if (userAuth) {
         // user logged in
-        console.log(user, "user is logged in ");
+        console.log(userAuth, "user is logged in ");
 
         // dispatch the action of pushing the user into store
         dispatch(
           login({
-            uid: user.uid,
-            email: user.email,
+            uid: userAuth.uid,
+            email: userAuth.email,
           })
         );
       } else {
@@ -46,9 +46,6 @@ function App() {
           <Switch>
             <Route exact path='/'>
               <HomeScreen />
-            </Route>
-            <Route path='/test'>
-              <h1>App is running ...</h1>
             </Route>
           </Switch>
         )}

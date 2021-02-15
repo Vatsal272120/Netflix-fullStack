@@ -13,28 +13,24 @@ function App() {
 
   // for persistence = to see if user is logged in and wont change the app if user is logged in
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
-      if (userAuth) {
-        // user logged in
-        console.log(userAuth, "user is logged in ");
+    const unsub = auth.onAuthStateChanged((useAuth) => {
+      if (useAuth) {
+        //logged in
 
-        // dispatch the action of pushing the user into store
+        // dispatchin the action of user logging in
         dispatch(
           login({
-            uid: userAuth.uid,
-            email: userAuth.email,
+            uid: useAuth.uid,
+            email: useAuth.email,
           })
         );
       } else {
         // logged out
-
-        // dispatching the action of user getting logged out
         dispatch(logout);
       }
     });
 
-    // detach the old user and attach a new user = useEffect clean up fn
-    return unsubscribe;
+    return unsub;
   }, []);
 
   return (

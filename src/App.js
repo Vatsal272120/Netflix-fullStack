@@ -32,7 +32,9 @@ function App() {
     });
 
     return unsub;
-  }, []);
+  }, [dispatch]);
+
+  // useEffect is dependent on the dispatch method - suppose to check the code and fire off
 
   return (
     <div className='app'>

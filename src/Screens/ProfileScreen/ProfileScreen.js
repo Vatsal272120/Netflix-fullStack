@@ -19,7 +19,7 @@ const ProfileScreen = () => {
             alt=''
           />
           <div className='profileScreen__details'>
-            <h2>{user.email}</h2>
+            <h2 className='profileScreen__deatils__email'>{user.email}</h2>
             <div className='profileScreen__plans'>
               <button
                 className='profileScreen__signOut'

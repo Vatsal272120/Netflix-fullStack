@@ -40,10 +40,10 @@ function App() {
           <Login />
         ) : (
           <Switch>
-            <Route exact path='/'>
+            <Route path='/profile'>
               <HomeScreen />
             </Route>
-            <Route path='/profile'>
+            <Route exact path='/'>
               <HomeScreen />
             </Route>
           </Switch>

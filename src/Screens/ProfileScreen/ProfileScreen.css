@@ -3,6 +3,13 @@
   color: white;
 }
 .profileScreen__body {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding-top: 8%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .profileScreen__info {

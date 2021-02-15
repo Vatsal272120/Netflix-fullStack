@@ -4,9 +4,12 @@ import HomeScreen from "./Screens/HomeScreen/HomeScreen";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./Screens/Login/Login";
 import { auth } from "./firebase";
+import { useDispatch } from "react-redux";
+import { login, logout } from "./features/userSlice";
 
 function App() {
   const user = null;
+  const dispatch = useDispatch();
 
   // for persistence = to see if user is logged in and wont change the app if user is logged in
   useEffect(() => {
@@ -14,8 +17,19 @@ function App() {
       if (user) {
         // user logged in
         console.log(user, "user is logged in ");
+
+        // dispatch the action of pushing the user into store
+        dispatch(
+          login({
+            uid: user.uid,
+            email: user.email,
+          })
+        );
       } else {
         // logged out
+
+        // dispatching the action of user getting logged out
+        dispatch(logout);
       }
     });
 

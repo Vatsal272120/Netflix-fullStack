@@ -66,23 +66,15 @@ const Banner = () => {
         <h1 className='banner__title'>
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
-        <div className='banner__buttons'>
+        {/* <div className='banner__buttons'>
           <button className='banner__button' onClick={() => handleClick(movie)}>
             Play
           </button>
-          {/*     {trailerUrl ? (
-            <div className='trailer'>
-              {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
-            </div>
-          ) : (
-            <> </>
-          )} */}
-        </div>
-        <h1 className='banner__description'>
-          {truncate(movie?.overview, 150)}
-        </h1>
+        </div> */}
+        <h1 className='banner__description'>{movie?.overview}</h1>
       </div>
       <div className='banner--fadebottom' />
+      {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
     </header>
   );
 };

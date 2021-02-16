@@ -12,6 +12,7 @@ const HomeScreen = () => {
       {/* Nav */}
       <Navbar />
       <Banner />
+
       {/* Rows */}
 
       <Row title='Dramas' fetchUrl={requests.fetchDrama} />

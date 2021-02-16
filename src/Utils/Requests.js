@@ -1,8 +1,8 @@
-const apiKey = "02f3dcb2eebfd92edbf81089d7294c86";
+const apiKey = "08d05be211b7ba2cc39b2d4556b16422";
 
 const requests = {
   fetchTrending: `/trending/all/week?api_key=${apiKey}&language=en-US`,
-  fetchNetflixOriginals: `/discover/tv?api_key=${apiKey}&with_networks=213`,
+  fetchDrama: `/discover/movie?api_key=${apiKey}&with_genres=18`,
   fetchTopRated: `/movie/top_rated?api_key=${apiKey}&language=en-US`,
   fetchActionMovies: `/discover/movie?api_key=${apiKey}&with_genres=28`,
   fetchComedyMovies: `/discover/movie?api_key=${apiKey}&with_genres=35`,
@@ -15,3 +15,6 @@ const requests = {
 };
 
 export default requests;
+
+//https://api.themoviedb.org/3/trending/all/day?api_key=${apiKey}
+// https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_networks=213&include_null_first_air_dates=false

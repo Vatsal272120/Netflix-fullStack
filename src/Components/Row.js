@@ -30,10 +30,12 @@ const Row = ({ title, fetchUrl, isLargeRow = false }) => {
   };
 
   const handleClick = (movie) => {
+    console.log(movie.title);
     if (trailerUrl) {
       settrailerUrl("");
     } else {
-      movieTrailer(movie?.title)
+      console.log(movie?.original_name);
+      movieTrailer(movie?.title || movie?.name)
         .then((url) => {
           const urlParams = new URLSearchParams(new URL(url).search);
           settrailerUrl(urlParams.get("v"));

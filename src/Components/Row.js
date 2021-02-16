@@ -44,7 +44,7 @@ const Row = ({ title, fetchUrl, isLargeRow = false }) => {
     }
   };
 
-  console.log(trailerUrl);
+  //console.log(trailerUrl);
 
   return (
     <div className='row'>

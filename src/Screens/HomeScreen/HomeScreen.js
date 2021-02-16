@@ -13,6 +13,7 @@ const HomeScreen = () => {
       <Navbar />
       <Banner />
       {/* Rows */}
+
       <Row title='Dramas' fetchUrl={requests.fetchDrama} />
       <Row title='Trending Now' fetchUrl={requests.fetchTrending} />
       <Row title='Top Rated' fetchUrl={requests.fetchTopRated} />
